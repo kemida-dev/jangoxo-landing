@@ -31,12 +31,26 @@
         </p>
 
         <div>
-          <form name="contact" netlify>
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+
+            <!-- honeypot anti-spam -->
+            <p class="hidden">
+              <label>No llenar: <input name="bot-field" /></label>
+            </p>
+
             <div class="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2">
               <div class="relative w-full">
                 <input
                   type="text"
                   id="nombre"
+                  required
+                  name="nombre"
                   placeholder="Nombre"
                   class="peer w-full border-b-2 border-gray-300 bg-transparent pt-5 pb-2 text-sm text-gray-900 placeholder-transparent focus:border-blue-500 focus:outline-none"
                 />
@@ -51,6 +65,7 @@
                 <input
                   type="text"
                   id="apellido"
+                  name="apellido"
                   placeholder="Apellido"
                   class="peer w-full border-b-2 border-gray-300 bg-transparent pt-5 pb-2 text-sm text-gray-900 placeholder-transparent focus:border-blue-500 focus:outline-none"
                 />
@@ -66,6 +81,8 @@
               <input
                 type="text"
                 id="email"
+                required
+                name="email"
                 placeholder="Email"
                 class="peer w-full border-b-2 border-gray-300 bg-transparent pt-5 pb-2 text-sm text-gray-900 placeholder-transparent focus:border-blue-500 focus:outline-none"
               />
@@ -80,6 +97,8 @@
               <input
                 type="text"
                 id="phone"
+                required
+                name="phone"
                 placeholder="Teléfono"
                 class="peer w-full border-b-2 border-gray-300 bg-transparent pt-5 pb-2 text-sm text-gray-900 placeholder-transparent focus:border-blue-500 focus:outline-none"
               />
@@ -94,6 +113,8 @@
               <input
                 type="text"
                 id="business_name"
+                required
+                name="business_name"
                 placeholder="Nombre del Negocio"
                 class="peer w-full border-b-2 border-gray-300 bg-transparent pt-5 pb-2 text-sm text-gray-900 placeholder-transparent focus:border-blue-500 focus:outline-none"
               />
@@ -108,6 +129,8 @@
               <input
                 type="text"
                 id="type_of_business"
+                required
+                name="type_of_business"
                 placeholder="Tipo de Negocio"
                 class="peer w-full border-b-2 border-gray-300 bg-transparent pt-5 pb-2 text-sm text-gray-900 placeholder-transparent focus:border-blue-500 focus:outline-none"
               />
@@ -121,6 +144,7 @@
             <div class="relative w-full">
               <textarea
                 id="mensaje"
+                name="mensaje"
                 placeholder="Cuentanos sobre tus necesidades específicas..."
                 rows="4"
                 class="peer w-full border-b-2 border-gray-300 bg-transparent pt-5 pb-2 text-sm text-gray-900 placeholder-transparent focus:border-blue-500 focus:outline-none resize-none"
