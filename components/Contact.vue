@@ -31,7 +31,7 @@
         </p>
 
         <div>
-          <form>
+          <form name="contact" netlify>
             <div class="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2">
               <div class="relative w-full">
                 <input
